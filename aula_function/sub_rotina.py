@@ -21,4 +21,7 @@ while condicao:
     # os.system('cls')
     imprime_imc()
 
+# def func(*args):
+    
+
 
