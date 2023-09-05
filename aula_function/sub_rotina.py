@@ -1,6 +1,11 @@
-import os
+'''
+FUNÇÃO = Para ser uma função é necessario ter um retorno 
+PROCEDIMENTO = Quando não tem retorno 
+'''
 
-def calcula_imc(peso, altura):
+# import os
+
+def calcula_imc(peso: float, altura: float) -> float: #Obrigado o função e parametroas a receber e retornar float
     return peso / altura**2
 
 def imprime_imc():
