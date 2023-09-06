@@ -3,7 +3,7 @@ import os
 
 condicao = True
 
-while condicao == True:
+while condicao:
     nome_atual = nome()
     print(f'Olá {nome_atual}, seu IMC é: {imc()}')
 
@@ -15,6 +15,4 @@ while condicao == True:
         continue
     elif escolha == 'N':
         condicao = False
-    else:
-        os.system('cls')
         continue
