@@ -1,6 +1,6 @@
 def fatorial(num):
     if num == 1:
-        return num
+        return 1
     return num * fatorial(num-1)
 
 

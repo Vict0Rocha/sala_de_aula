@@ -1,12 +1,10 @@
-t1 = 0
-t2 = 1 
-n = 12
-# fib = t1 + t2
-inicio = 3
+def fibonacci(number):
+    if number <= 1:
+        return number
+    return fibonacci(number - 1) + fibonacci(number - 2)
 
-while inicio <= n:
-    fib = t1 + t2
-    t1 = t2
-    t2 = fib
-    print(fib)
-    inicio += 1
+
+x = int(10)
+result = fibonacci(x-1)
+
+print(f'O fibonacci de {x} é {result}')
