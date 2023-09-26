@@ -6,6 +6,14 @@ Toda função dentro de uma classe precisa de um SELF - É obrigatório o uso do
 
 
 ----------------------------------------
-cabelo - olho - altura - sexo - ATRIBUTOS
+             ATIVIDADE
 ----------------------------------------
-falar - andar - METODOS
+
+Fazer uma calculadora orientada a objeto
+
+CALCULADORA PADRÃO; pessa:2Ks custa R$5,00 - roxo
+div - sub - mult - adic 
+
+CALCULADORA TOP; pessa 500gm; custa R$2.000 - rosa
+Potencia - fatorial
+
