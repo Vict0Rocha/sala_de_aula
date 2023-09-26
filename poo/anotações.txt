@@ -3,3 +3,9 @@ Funções chama-se METODOS
 
 Toda clase precisa começar com a letra maiscula
 Toda função dentro de uma classe precisa de um SELF - É obrigatório o uso do self dentro de funções nas clases
+
+
+----------------------------------------
+cabelo - olho - altura - sexo - ATRIBUTOS
+----------------------------------------
+falar - andar - METODOS
