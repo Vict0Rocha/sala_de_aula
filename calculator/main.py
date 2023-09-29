@@ -1,5 +1,6 @@
-from calculator import Calculadora_padrao
+from calculator import Calculator
 
-calculator1 = Calculadora_padrao('2Kg', 'R$5.00', 'Roxo')
-
-print(calculator1)
+calculator_padrao = Calculator('2Kg', 'R$5.00', 'Roxo')
+calculator_top = Calculator('500gm', 'R$2.000', 'Rosa')
+print(calculator_padrao)
+print(calculator_top)

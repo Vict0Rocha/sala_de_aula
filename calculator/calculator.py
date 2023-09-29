@@ -1,4 +1,4 @@
-class Calculadora_padrao:
+class Calculator:
     def __init__(self, pesso, valor, cor):
         self.pesso = pesso
         self.valor = valor
