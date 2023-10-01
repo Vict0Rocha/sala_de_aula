@@ -20,3 +20,11 @@ class Calculator:
 
     def dividir(self, n1, n2):
         return print(f'{n1} / {n2} = {n1/n2}')
+
+    # def fatorial(self, n1: int):
+    #     inicio = 1
+    #     result = 0
+    #     for inicio in range(n1):
+    #         result *= inicio
+
+    #     return result
