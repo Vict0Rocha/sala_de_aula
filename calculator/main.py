@@ -37,7 +37,7 @@ elif opcao == 2:
     calculator_top.subtrair(n1, n2)
     calculator_top.multiplicar(n1, n2)
     calculator_top.dividir(n1, n2)
-    # calculator_top.fatorial(n1)
+    calculator_top.fatorial(n1)
 
     # print('Digite qual operação você quer fazer: ')
     # print('+  -  *  / ')
