@@ -5,7 +5,6 @@ class Calculator:
         self.cor = cor
 
     def screen(self):
-        print('O estilo da calculadora é...')
         print(f'Cor: {self.cor}')
         print(f'Pesso: {self.pesso}')
         print(f'Valor: {self.valor}')
@@ -18,3 +17,6 @@ class Calculator:
 
     def multiplicar(self, n1, n2):
         return print(f'{n1} * {n2} =  {n1 * n2}')
+
+    def dividir(self, n1, n2):
+        return print(f'{n1} / {n2} = {n1/n2}')
