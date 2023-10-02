@@ -21,21 +21,23 @@ class Calculator:
     def dividir(self, n1, n2):
         return print(f'{n1} / {n2} = {n1/n2}')
 
-    # def fatorial(self, n1: int):
-    #     inicio = 1
-    #     result = 0
-    #     for inicio in range(n1):
-    #         result *= inicio
-
-    #     return result
-
-    def fatorial(self, numero):
+    def fatorial(self, numero, numero2):
         self.numero = numero
         resultado = 1
         count = 1
-
         while count <= numero:
             resultado *= count
             count += 1
 
-        print(resultado)
+        self.numero2 = numero2
+        resultado2 = 1
+        count2 = 1
+        while count2 <= numero2:
+            resultado2 *= count2
+            count2 += 1
+
+        return print(f'O fatorial de {numero} é {resultado}\n \
+O fatorial de {numero2} é {resultado2}')
+
+    def potencia(self, n1, n2):
+        return print(f'A potencia de {n1} sobre {n2} é: {n1**n2}')

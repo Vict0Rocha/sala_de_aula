@@ -21,9 +21,6 @@ if opcao == 1:
     calculator_padrao.subtrair(n1, n2)
     calculator_padrao.multiplicar(n1, n2)
     calculator_padrao.dividir(n1, n2)
-    # print('Digite qual operação você quer fazer: ')
-    # print('+  -  *  / ')
-    # operacao = input('<<< ')
 
 elif opcao == 2:
     os.system('cls')
@@ -37,20 +34,8 @@ elif opcao == 2:
     calculator_top.subtrair(n1, n2)
     calculator_top.multiplicar(n1, n2)
     calculator_top.dividir(n1, n2)
-    calculator_top.fatorial(n1)
-
-    # print('Digite qual operação você quer fazer: ')
-    # print('+  -  *  / ')
-    # operacao = input('<<< ')
+    calculator_top.fatorial(n1, n2)
+    calculator_top.potencia(n1, n2)
 
 else:
     print('Opção invalida!')
-
-
-# calculator_padrao.soma(5, 5)
-# print(calculator_padrao.subtrair(10, 5))
-# print(calculator_padrao.multiplicar(3, 5))
-
-# calculator_padrao.screen()
-# print(20*'-')
-# calculator_top.screen()
