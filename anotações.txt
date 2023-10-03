@@ -1,0 +1,26 @@
+Fazer um simulador de correio 
+O usuario precisa escolher a forma de atendimento, se é lista, fila ou pilha 
+Depois oque ele deseja fazer - cadastrar, atender ou remover 
+Fazer tudo orientado a objeto 
+
+Lista - Qualquer parte 
+Fila - Quem entrar primeiro
+Pilha - Quem entrar por ultimo
+
+Exemplo do código criado pelo professor 
+
+class Atendimento:
+    class __init__(self, pessoa):
+        self.pessoa = pessoa 
+
+    def comoLista(self, acao, pessoa):
+        march(acao):
+            case 'cadastrar':
+                self.pessoa.append(pessoa)
+            case 'atender':
+                pass
+
+    def comoFila(self):
+        pass
+    def comoPilha(self):
+        pass
