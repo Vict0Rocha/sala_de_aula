@@ -7,7 +7,8 @@ calculator_top = Calculator('500gm', 'R$2.000', 'Rosa')
 print('Digie 1 - Calculadora Padrão')
 print('Digie 2 - Calculadora Top')
 
-opcao = int(input('Digite qual calculadora você que usar: '))
+opcao = input('Digite qual calculadora você que usar: ')
+
 
 if opcao == 1:
     os.system('cls')
