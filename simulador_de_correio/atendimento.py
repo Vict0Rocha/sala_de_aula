@@ -8,7 +8,7 @@ class Atendimentos:
         self.cadastro = cadastro
         print('O que você deseja fazer?')
         print('1 - Cadastrar')
-        print('2 - Atender')
+        print('2 - Listar')
         print('3 - Remover')
 
         escolha = input('Digite seua escolha: ')
@@ -16,13 +16,13 @@ class Atendimentos:
 
         try:
             escolha_int = int(escolha)
-            match escolha:
+            match escolha_int:
                 case 1:
                     print('Digite oque você deseja cadastrar')
                 case 2:
-                    pass
+                    print('Sua lista é...')
                 case 3:
-                    pass
+                    print('Digite o índice que dejesa revomer')
                 case Exception:
                     print('Opção inválida!')
 
@@ -34,14 +34,14 @@ class Atendimentos:
     def fila(self, acao):
         self.acao = acao
         print('Você escolheu FILA')
-        self.opcao(None, None)
+        self.opcao(self, self)
 
     def lista(self, acao):
         self.acao = acao
         print('Você escolheu LISTA')
-        self.opcao(None, None)
+        self.opcao(self, self)
 
     def pilha(self, acao):
         self.acao = acao
         print('Você escolheu PILHA')
-        self.opcao(None, None)
+        self.opcao(self, self)
