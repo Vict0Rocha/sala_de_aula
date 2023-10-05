@@ -16,7 +16,7 @@ match esccolha:
     case 'L':
         pessoa.lista(1)
     case 'F':
-        pessoa.fila(None, None)
+        pessoa.fila(None)
     case 'P':
         pessoa.pilha(1)
     case Exception:
