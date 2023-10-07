@@ -14,10 +14,10 @@ esccolha = input('<<< ').upper()
 
 match esccolha:
     case 'L':
-        pessoa.lista(1)
+        pessoa.lista()
     case 'F':
-        pessoa.fila(None)
+        pessoa.fila()
     case 'P':
-        pessoa.pilha(1)
+        pessoa.pilha()
     case Exception:
         print('Opção inválida!')
