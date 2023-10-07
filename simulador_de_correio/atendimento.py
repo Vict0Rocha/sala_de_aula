@@ -1,5 +1,5 @@
-import os
-import sys
+import os  # Usado para limpar o terminar
+import sys  # Usado para finalizar o programa
 
 
 class Atendimentos:
@@ -8,6 +8,7 @@ class Atendimentos:
         self.nome_pessoa = nome_pessoa
 
     def opcao(self, escolha):
+        # Função usada somente como um menu, para mostrar as possibilidades
         self.escolha = escolha
         validacao = True
         print('O que você deseja fazer?')
@@ -34,9 +35,10 @@ class Atendimentos:
         condicao = True
         lista = []
         while condicao == True:
+            # Atribuindo o retorno da função opção para outra variavel
             n_opcao = self.opcao(self)
 
-            match n_opcao:
+            match n_opcao:  # Verificando o retorno recebido
                 case 0:
                     sys.exit(0)
                 case 1:
@@ -49,7 +51,7 @@ class Atendimentos:
                     os.system('cls')
                     if len(lista) <= 0:
                         print('Nada para lista')
-
+                    # Percorrendo e enumerando cada item da lista adicionado
                     for i, item_cadastro in enumerate(lista):
                         print(f'{i}) {item_cadastro}')
                     print('')
@@ -66,9 +68,11 @@ class Atendimentos:
         condicao = True
         lista = []
         while condicao == True:
+            # Atribuindo o retorno da função opção para outra variavel
             n_opcao = self.opcao(self)
 
             match n_opcao:
+                # Verificando o retorno recebido
                 case 0:
                     sys.exit(0)
                 case 1:
@@ -83,7 +87,7 @@ class Atendimentos:
                     os.system('cls')
                     if len(lista) <= 0:
                         print('Nada para lista')
-
+                    # Percorrendo e enumerando cada item da lista adicionado
                     for i, item_cadastro in enumerate(lista):
                         print(f'{i}) {item_cadastro}')
                     print('')
@@ -111,9 +115,11 @@ class Atendimentos:
         condicao = True
         lista = []
         while condicao == True:
+            # Atribuindo o retorno da função opção para outra variavel
             n_opcao = self.opcao(self)
 
             match n_opcao:
+                # Verificando o retorno recebido
                 case 0:
                     sys.exit(0)
                 case 1:
@@ -127,6 +133,7 @@ class Atendimentos:
                     if len(lista) <= 0:
                         print('Nada para lista')
 
+                    # Percorrendo e enumerando cada item da lista adicionado
                     for i, item_cadastro in enumerate(lista):
                         print(f'{i}) {item_cadastro}')
                     print('')
