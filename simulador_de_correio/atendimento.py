@@ -50,7 +50,40 @@ class Atendimentos:
                     if len(lista) <= 0:
                         print('Nada para lista')
 
+                    for i, item_cadastro in enumerate(lista):
+                        print(f'{i}) {item_cadastro}')
+                    print('')
+
+                case 3:
+                    lista.pop(0)
+
+                case Exception:
+                    print('Opção inválida!')
+                    continue
+
+    def lista(self):
+        print('Você escolheu LISTA')
+        condicao = True
+        lista = []
+        while condicao == True:
+            n_opcao = self.opcao(self)
+
+            match n_opcao:
+                case 0:
+                    sys.exit(0)
+                case 1:
                     os.system('cls')
+                    indice_item = int(input(
+                        'Digite o índice que você deseja colocar seu item: '))
+                    print('Digite oque você deseja cadastrar')
+                    item_cadastro = input('<<< ')
+                    lista.insert(indice_item, item_cadastro)
+
+                case 2:
+                    os.system('cls')
+                    if len(lista) <= 0:
+                        print('Nada para lista')
+
                     for i, item_cadastro in enumerate(lista):
                         print(f'{i}) {item_cadastro}')
                     print('')
@@ -73,10 +106,34 @@ class Atendimentos:
                     print('Opção inválida!')
                     continue
 
-    def lista(self):
-        print('Você escolheu LISTA')
-        n_opcao = self.opcao(self)
-
     def pilha(self):
         print('Você escolheu PILHA')
-        n_opcao = self.opcao(self)
+        condicao = True
+        lista = []
+        while condicao == True:
+            n_opcao = self.opcao(self)
+
+            match n_opcao:
+                case 0:
+                    sys.exit(0)
+                case 1:
+                    os.system('cls')
+                    print('Digite oque você deseja cadastrar')
+                    item_cadastro = input('<<< ')
+                    lista.append(item_cadastro)
+
+                case 2:
+                    os.system('cls')
+                    if len(lista) <= 0:
+                        print('Nada para lista')
+
+                    for i, item_cadastro in enumerate(lista):
+                        print(f'{i}) {item_cadastro}')
+                    print('')
+
+                case 3:
+                    lista.pop()
+
+                case Exception:
+                    print('Opção inválida!')
+                    continue
