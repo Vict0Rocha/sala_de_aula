@@ -77,11 +77,15 @@ class Atendimentos:
                     sys.exit(0)
                 case 1:
                     os.system('cls')
-                    indice_item = int(input(
-                        'Digite o índice que você deseja colocar seu item: '))
-                    print('Digite oque você deseja cadastrar')
-                    item_cadastro = input('<<< ')
-                    lista.insert(indice_item, item_cadastro)
+                    indice_item = input('Digite o índice que você deseja colocar seu item: ')
+                    try:
+                        indice_item = int(indice_item)
+                        print('Digite oque você deseja cadastrar')
+                        item_cadastro = input('<<< ')
+                        lista.insert(indice_item, item_cadastro)
+                    except ValueError:
+                        print('[ERRO] - Digite somente números')
+                    
 
                 case 2:
                     os.system('cls')
