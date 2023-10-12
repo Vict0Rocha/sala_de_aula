@@ -1,7 +1,7 @@
 import os
 
 
-class Telefone:
+class ListaTelefonica:
     def __init__(self, usuario):
         self.nome = usuario
         self.lista_nome = []
@@ -16,7 +16,7 @@ print(' LISTA TELEFONICA')
 print(18 * '-')
 
 nome = input('\nDigite seu nome: ')
-usuario = Telefone(nome)
+usuario = ListaTelefonica(nome)
 os.system('cls')
 
 print(f'Olá, {usuario.nome}, escolha oque você deseja fazer!')
@@ -26,6 +26,13 @@ escolha = input('<<< ')
 
 try:
     escolha_inteiro = int(escolha)
+    if escolha_inteiro == 1:
+        print('CADASTRADO')
+
+    elif escolha_inteiro == 2:
+        print('LISTANDO')
+    else:
+        print('[ERRO] - Opção inválida!')
 
 except ValueError:
     print('[ERRO] - Digite somente inteiros!')
