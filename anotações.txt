@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os  # Usado para limpar o terminar
 import sys  # Usado para finalizar o programa
 
@@ -144,3 +145,29 @@ class Atendimentos:
                 case Exception:
                     print('Opção inválida!')
                     continue
+=======
+Fazer uma lista telefonica 
+
+Nome - Número
+
+O usuario precisa escolher entre - cadastrar ou consultar
+O telefone pertence ao um nome 
+
+Cadatro - consulta
+Toda vez que consultar um telefone, o ultimo tel. consultado deve ir para a primeira posição do vetor 
+
+Exemplo do professor
+
+class telefone:
+    def __init__(self):
+        self.nome = []
+        self.telefone = []
+
+    def cadastrar(self, nome, telefone):
+        self.nome.append(nome)
+        self.telefone.append(telefone)
+
+
+    def consultar(self):
+        pass
+>>>>>>> 43d2298d1f0ad14baa5512579fedd1f672915239
