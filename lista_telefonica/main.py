@@ -1,6 +1,11 @@
 import os
 # Nesse codigo todo os.system('cls') é para limpar a tela
 
+'''
+    Receber na minha função principal
+    Na minha função cadastrar eu só dou um append
+'''
+
 
 class ListaTelefonica:
     def __init__(self, usuario):
@@ -8,21 +13,22 @@ class ListaTelefonica:
         self.lista_nome = []  # Criando a lista de nome
         self.lista_telefone = []  # Criando a lista de telefone
 
-    def cadastrar(self):
-        os.system('cls')
-        self.lista_principal = []  # Criando minha lista com nome e telefone
+    def cadastrar(self, lista_de_retorno):
+        # os.system('cls')
+        self.lista_de_retorno = lista_de_retorno
+        # lista_desetorno = []  # Criando minha lista com nome e telefone
         self.nome = input('Digite o nome para cadastro: ')
-        self.lista_principal.append(self.nome)
+        lista_de_retorno.append(self.nome)
         self.numero = input('Digite o número para cadastro: ')
 
         try:  # Validando o número digitado
             self.telefone = int(self.numero)
-            self.lista_principal.append(self.telefone)
+            lista_de_retorno.append(self.telefone)
 
         except ValueError:
             print('Digite somente números e não coloque espaçõs!')
 
-        return self.lista_principal
+        return lista_de_retorno
 
     def listar(self):
         ...
@@ -46,8 +52,12 @@ try:
     escolha_inteiro = int(escolha)
 
     if escolha_inteiro == 1:
-        os.system('cls')
-        usuario.cadastrar()
+        teste = True
+        lista = []
+        while teste == True:
+            # os.system('cls')
+            lista_principal = usuario.cadastrar(lista)
+            print(lista_principal)
 
     elif escolha_inteiro == 2:
         os.system('cls')
