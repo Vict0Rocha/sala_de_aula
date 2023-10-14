@@ -54,7 +54,7 @@ class ListaTelefonica:
         else:
             for contato in lista_principal:
                 if self.nome_consulta == contato:
-                    print(f'{contato}: {contato[:0]}')
+                    print(contato)
 
 
 print(18 * '-')
