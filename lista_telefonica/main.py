@@ -1,84 +1,13 @@
-# Nesse codigo todo os.system('cls') é para limpar a tela
-import os
+from lista_telefonica import ListaTelefonica
 import sys
+import os
 
-
-class ListaTelefonica:
-    def __init__(self, usuario):
-        self.nome = usuario
-        self.lista_nome = []  # Criando a lista de nome
-        self.lista_telefone = []  # Criando a lista de telefone
-
-    def cadastrar(self, lista_de_retorno):
-        os.system('cls')
-        self.loop = True
-
-        # Criando minha lista com nome e telefone
-        self.lista_de_retorno = lista_de_retorno
-        self.nome_cadastro = input('Digite o nome para cadastro: ').upper()
-        # self.nome_cadastro
-        lista_de_retorno.append(self.nome_cadastro)
-
-        while self.loop:
-            self.numero = input('Digite o número para cadastro: ')
-
-            try:  # Validando o número digitado
-                self.telefone = int(self.numero)
-                lista_de_retorno.append(self.telefone)
-                self.loop = False
-
-            except ValueError:
-                print('[ERRO] - Digite somente números e não coloque espaçõs!')
-                continue
-
-        return lista_de_retorno
-
-    def listar(self, lista_principal):
-        print('SUA LISTA DE CONTATOS\n')
-        if len(lista_principal) <= 0:
-            print('Nunhum contato salvo - Nada para listar\n')
-
-        else:
-            for contato in range(len(lista_principal)):
-                if contato % 2 != 0:  # Pulando os índices impares
-                    continue
-                print(
-                    f'{lista_principal[contato]}: {lista_principal[contato + 1]}')
-            print()
-
-    def consultar(self, lista_principal):
-        self.nome_consulta = input('Digite o nome para consultar: ').upper()
-        # self.inicio_lista = []
-        self.name = int
-        self.tel = int
-        self.indice_numero_remover = []
-
-        if self.nome_consulta not in lista_principal:  # Verificando se o contato está na lista
-            print('Contato inecistente!\n')
-        else:
-            for i, contato in enumerate(lista_principal):
-                if self.nome_consulta == contato:
-                    # Mostrando o cotato pesquisado
-                    print(f'{contato}: {lista_principal[i+1]}\n')
-
-                    # Criando uma nova lista com o número e contato pesquisado
-                    # self.inicio_lista.append(contato)
-                    # self.inicio_lista.append(lista_principal[i+1])
-                    self.name = i
-                    self.tel = i+1
-
-                    if 0 < self.name < len(lista_principal) and 0 < self.tel < len(lista_principal):
-
-                        self.elemento1 = lista_principal.pop(self.name)
-                        lista_principal.insert(0, self.elemento1)
-
-                        self.elemento2 = lista_principal.pop(self.tel)
-                        lista_principal.insert(1, self.elemento2)
-
-                        # self.indice_numero_remover = lista_principal[i+1]
-
-            print(lista_principal)
-            # print(self.inicio_lista)
+'''
+Um sistema que simula uma lista telefônica, podendo cadastrar um 
+nome e telefone, listar todos os contatos salvos e pesquisar um 
+contato pelo nome, ao pesquisar o contato, é feito um  cache, 
+pegando o nome e telefone do final da lista e colocando no  inicio.
+'''
 
 
 print(18 * '-')
@@ -110,7 +39,7 @@ while loop:
         elif escolha_inteiro == 1:
             os.system('cls')
             lista_principal = usuario.cadastrar(lista)
-            print(lista_principal)
+            # print(lista_principal)
             print()
 
         elif escolha_inteiro == 2:
@@ -126,7 +55,7 @@ while loop:
             continue
 
     except ValueError:
-        print('[ERRO] - Digite somente inteiros!')
+        print('[ERRO] - Digite somente números inteiros!')
         continue
 
     except Exception:
