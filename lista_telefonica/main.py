@@ -36,7 +36,7 @@ class ListaTelefonica:
     def listar(self, lista_principal):
         print('SUA LISTA DE CONTATOS\n')
         if len(lista_principal) <= 0:
-            print('Nunhum contato salvo - Nada para listar')
+            print('Nunhum contato salvo - Nada para listar\n')
 
         else:
             for contato in range(len(lista_principal)):
@@ -50,11 +50,11 @@ class ListaTelefonica:
         self.nome_consulta = input('Digite o nome para consultar: ').upper()
 
         if self.nome_consulta not in lista_principal:
-            print('Contato inecistente!')
+            print('Contato inecistente!\n')
         else:
-            for contato in lista_principal:
+            for i, contato in enumerate(lista_principal):
                 if self.nome_consulta == contato:
-                    print(contato)
+                    print(f'{contato}: {lista_principal[i+1]}\n')
 
 
 print(18 * '-')
