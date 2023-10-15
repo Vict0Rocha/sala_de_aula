@@ -48,13 +48,37 @@ class ListaTelefonica:
 
     def consultar(self, lista_principal):
         self.nome_consulta = input('Digite o nome para consultar: ').upper()
+        # self.inicio_lista = []
+        self.name = int
+        self.tel = int
+        self.indice_numero_remover = []
 
-        if self.nome_consulta not in lista_principal:
+        if self.nome_consulta not in lista_principal:  # Verificando se o contato está na lista
             print('Contato inecistente!\n')
         else:
             for i, contato in enumerate(lista_principal):
                 if self.nome_consulta == contato:
+                    # Mostrando o cotato pesquisado
                     print(f'{contato}: {lista_principal[i+1]}\n')
+
+                    # Criando uma nova lista com o número e contato pesquisado
+                    # self.inicio_lista.append(contato)
+                    # self.inicio_lista.append(lista_principal[i+1])
+                    self.name = i
+                    self.tel = i+1
+
+                    if 0 < self.name < len(lista_principal) and 0 < self.tel < len(lista_principal):
+
+                        self.elemento1 = lista_principal.pop(self.name)
+                        lista_principal.insert(0, self.elemento1)
+
+                        self.elemento2 = lista_principal.pop(self.tel)
+                        lista_principal.insert(1, self.elemento2)
+
+                        # self.indice_numero_remover = lista_principal[i+1]
+
+            print(lista_principal)
+            # print(self.inicio_lista)
 
 
 print(18 * '-')
@@ -105,6 +129,6 @@ while loop:
         print('[ERRO] - Digite somente inteiros!')
         continue
 
-    # except Exception:
-    #     print('[ERRO], problema não intendificado!')
-    #     continue
+    except Exception:
+        print('[ERRO], problema não intendificado!')
+        continue
