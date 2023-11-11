@@ -54,13 +54,13 @@ with open('texto.txt', 'w', encoding='utf-8') as x:
     x.write('\nNome: Henrique\n')
     x.write('Telefone: 3333\n')
     x.write('Endereço: Fora de casa\n')
-   
+
 vet = []
 p = 1
 
 
 with open('texto.txt', 'r', encoding='utf-8') as x:
-   
+
     # print(x.readlines())
     # print(x.readlines())
     # print(x.readline(2))
@@ -77,4 +77,3 @@ with open('texto.txt', 'r', encoding='utf-8') as x:
 
 
 print(vet[p])
-
