@@ -37,10 +37,13 @@ elif escolha == '4':
     with open(nome_do_arquivo, 'r+') as arquivo:
         nome_excluir = input('Digite o nome para excluir <<< ').upper()
         linhas = arquivo.readlines()
+        arquivo.seek(0)
         for indice, linha in enumerate(linhas):
             if nome_excluir in linha:
                 linhas.pop(indice)
+                
         arquivo.writelines(linhas)
+        arquivo.truncate()
 
 else:
     print('Opção invalida')
