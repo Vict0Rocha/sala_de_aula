@@ -20,7 +20,7 @@ while True:
     # Convertendo e verificando se o valor digitado é um número inteiro.
     try:
         escolha_int = int(escolha)
-        match escolha_int:
+        match escolha_int: # Verificando a escolha do usuario.
             case 1:
                 print('Você escolheu CADASTAR')
                 continue
