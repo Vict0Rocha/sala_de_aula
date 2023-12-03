@@ -22,8 +22,11 @@ while True:
         escolha_int = int(escolha)
         match escolha_int: # Verificando a escolha do usuario.
             case 1:
-                print('Você escolheu CADASTAR')
-                lista_telefonica = Lista_Telefonica('trabalho_2_semestre\contatos.csv', 'Victor', '1234' )
+                print('Você escolheu CADASTAR\n')
+                nome =  input('Digite o NOME: ')
+                telefone =  input('Digite o TELEFONE: ')
+                endereco =  input('Digite o ENDEREÇO: ')
+                lista_telefonica = Lista_Telefonica('trabalho_2_semestre\contatos.csv', nome, telefone, endereco)
                 lista_telefonica.cadastrar()
 
             case 2:       
@@ -52,6 +55,6 @@ while True:
     except ValueError:
         print('[ERRO] - Por favor, digite somente números INTEIROS.')
         continue
-    except Exception:
-        print('[ERRO] - Porblema não identificado pelo sistema.')
+    # except Exception:
+    #     print('[ERRO] - Porblema não identificado pelo sistema.')
 
