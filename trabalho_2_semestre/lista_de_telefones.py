@@ -26,9 +26,14 @@ class Lista_Telefonica:
             for linha in arquivo_csv:
                 print(linha)
 
-    # @staticmethod
-    def consultar(self):
-        pass
+    @staticmethod
+    def consultar(nome_arquivo, nome_consulta):
+        with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
+            arquivo_csv = csv.DictReader(arquivo, delimiter=';')
+            for linha in arquivo_csv:
+                if nome_consulta == linha['NOME']:
+                    print(linha)
+
 
     # @staticmethod
     def editar(self):

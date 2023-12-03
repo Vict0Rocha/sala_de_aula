@@ -23,7 +23,7 @@ while True:
         match escolha_int: # Verificando a escolha do usuario.
             case 1:
                 print('Você escolheu CADASTAR\n')
-                nome =  input('Digite o NOME: ')
+                nome =  input('Digite o NOME: ').upper()
                 telefone =  input('Digite o TELEFONE: ')
 
                 # Verificando se o telefone tem somente números
@@ -33,7 +33,7 @@ while True:
                     print('[ERRO] - Por favor, digite SOMENTE NÚMEROS')
                     continue
 
-                endereco =  input('Digite o ENDEREÇO: ')
+                endereco =  input('Digite o ENDEREÇO: ').upper()
                 lista_telefonica = Lista_Telefonica('trabalho_2_semestre\contatos.csv', nome, telefone_int, endereco)
                 lista_telefonica.cadastrar()
 
@@ -43,7 +43,8 @@ while True:
 
             case 3:
                 print('Você escolheu CONSULTAR')
-                continue
+                nome_consulta = input('Digite o nome para consultar: ').upper()
+                Lista_Telefonica.consultar('trabalho_2_semestre\contatos.csv', nome_consulta)
 
             case 4:
                 print('Você escolheu EDITAR')
