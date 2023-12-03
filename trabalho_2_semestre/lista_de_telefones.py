@@ -19,15 +19,21 @@ class Lista_Telefonica:
             # Escrevendo a nova linha do meu arquivo
             arquivo_csv.writerow({'NOME':self.nome, 'TELEFONE':self.telefone, 'ENDEREÇO':self.endereco})
 
+    @staticmethod
+    def listar(nome_arquivo):
+        with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
+            arquivo_csv = csv.DictReader(arquivo, delimiter=';')
+            for linha in arquivo_csv:
+                print(linha)
 
-    def listar(self):
-        pass
-
+    # @staticmethod
     def consultar(self):
         pass
 
+    # @staticmethod
     def editar(self):
         pass
 
+    # @staticmethod
     def excluir(self):
         pass

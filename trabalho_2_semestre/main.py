@@ -39,7 +39,7 @@ while True:
 
             case 2:
                 print('Você escolheu LISTAR')
-                continue
+                Lista_Telefonica.listar('trabalho_2_semestre\contatos.csv')
 
             case 3:
                 print('Você escolheu CONSULTAR')
