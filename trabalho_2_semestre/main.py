@@ -25,11 +25,19 @@ while True:
                 print('Você escolheu CADASTAR\n')
                 nome =  input('Digite o NOME: ')
                 telefone =  input('Digite o TELEFONE: ')
+
+                # Verificando se o telefone tem somente números
+                try:
+                    telefone_int = int(telefone)
+                except ValueError:
+                    print('[ERRO] - Por favor, digite SOMENTE NÚMEROS')
+                    continue
+
                 endereco =  input('Digite o ENDEREÇO: ')
-                lista_telefonica = Lista_Telefonica('trabalho_2_semestre\contatos.csv', nome, telefone, endereco)
+                lista_telefonica = Lista_Telefonica('trabalho_2_semestre\contatos.csv', nome, telefone_int, endereco)
                 lista_telefonica.cadastrar()
 
-            case 2:       
+            case 2:
                 print('Você escolheu LISTAR')
                 continue
 
@@ -44,7 +52,7 @@ while True:
             case 5:
                 print('Você escolheu EXCLUIR')
                 continue
-                
+
             case 6:
                 # sys.exit(0) #Finalizando o programa.
                 break
