@@ -1,5 +1,5 @@
 from lista_de_telefones import Lista_Telefonica
-import sys
+# import sys
 # import os
 
 print(18 * '-')
@@ -15,7 +15,7 @@ while True:
     print('4 - EDITAR')
     print('5 - EXCLUIR')
     print('6 - SAIR')
-    escolha = input('<<< ')
+    escolha = input('>>> ')
 
     # Convertendo e verificando se o valor digitado é um número inteiro.
     try:
@@ -23,7 +23,8 @@ while True:
         match escolha_int: # Verificando a escolha do usuario.
             case 1:
                 print('Você escolheu CADASTAR')
-                continue
+                lista_telefonica = Lista_Telefonica('trabalho_2_semestre\contatos.csv', 'Victor', '1234' )
+                lista_telefonica.cadastrar()
 
             case 2:       
                 print('Você escolheu LISTAR')
@@ -42,7 +43,8 @@ while True:
                 continue
                 
             case 6:
-                sys.exit(0) #Finalizando o programa.
+                # sys.exit(0) #Finalizando o programa.
+                break
 
             case Exception:
                 print('[ERRO] - O valor digitado, não coresponde a NENHUMA OPÇÃO.')
