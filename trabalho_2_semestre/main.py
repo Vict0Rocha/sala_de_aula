@@ -1,5 +1,5 @@
 from lista_de_telefones import Lista_Telefonica
-import sys
+# import sys
 # import os
 
 print(18 * '-')
@@ -15,23 +15,36 @@ while True:
     print('4 - EDITAR')
     print('5 - EXCLUIR')
     print('6 - SAIR')
-    escolha = input('<<< ')
+    escolha = input('>>> ')
 
     # Convertendo e verificando se o valor digitado é um número inteiro.
     try:
         escolha_int = int(escolha)
         match escolha_int: # Verificando a escolha do usuario.
             case 1:
-                print('Você escolheu CADASTAR')
-                continue
+                print('Você escolheu CADASTAR\n')
+                nome =  input('Digite o NOME: ').upper()
+                telefone =  input('Digite o TELEFONE: ')
 
-            case 2:       
+                # Verificando se o telefone tem somente números
+                try:
+                    telefone_int = int(telefone)
+                except ValueError:
+                    print('[ERRO] - Por favor, digite SOMENTE NÚMEROS')
+                    continue
+
+                endereco =  input('Digite o ENDEREÇO: ').upper()
+                lista_telefonica = Lista_Telefonica('trabalho_2_semestre\contatos.csv', nome, telefone_int, endereco)
+                lista_telefonica.cadastrar()
+
+            case 2:
                 print('Você escolheu LISTAR')
-                continue
+                Lista_Telefonica.listar('trabalho_2_semestre\contatos.csv')
 
             case 3:
                 print('Você escolheu CONSULTAR')
-                continue
+                nome_consulta = input('Digite o nome para consultar: ').upper()
+                Lista_Telefonica.consultar('trabalho_2_semestre\contatos.csv', nome_consulta)
 
             case 4:
                 print('Você escolheu EDITAR')
@@ -40,9 +53,10 @@ while True:
             case 5:
                 print('Você escolheu EXCLUIR')
                 continue
-                
+
             case 6:
-                sys.exit(0) #Finalizando o programa.
+                # sys.exit(0) #Finalizando o programa.
+                break
 
             case Exception:
                 print('[ERRO] - O valor digitado, não coresponde a NENHUMA OPÇÃO.')
@@ -50,6 +64,6 @@ while True:
     except ValueError:
         print('[ERRO] - Por favor, digite somente números INTEIROS.')
         continue
-    except Exception:
-        print('[ERRO] - Porblema não identificado pelo sistema.')
+    # except Exception:
+    #     print('[ERRO] - Porblema não identificado pelo sistema.')
 
