@@ -48,7 +48,9 @@ while True:
 
             case 4:
                 print('Você escolheu EDITAR')
-                continue
+                print('Digite o nome que você deseja realizar alguma alteração')
+                nome_alteracao = input('>>> ').upper()
+                Lista_Telefonica.editar('trabalho_2_semestre\contatos.csv', nome_alteracao)
 
             case 5:
                 print('Você escolheu EXCLUIR')

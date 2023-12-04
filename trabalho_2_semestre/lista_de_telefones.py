@@ -25,6 +25,7 @@ class Lista_Telefonica:
             arquivo_csv = csv.DictReader(arquivo, delimiter=';')
             for linha in arquivo_csv:
                 print(linha)
+            return [linha for linha in arquivo_csv]
 
     @staticmethod
     def consultar(nome_arquivo, nome_consulta):
@@ -34,10 +35,45 @@ class Lista_Telefonica:
                 if nome_consulta == linha['NOME']:
                     print(linha)
 
+    @staticmethod
+    def editar(nome_arquivo, nome_alteracao):
+        linhas = []
+
+        with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
+            arquivo_csv = csv.DictReader(arquivo, delimiter=';')
+            for linha in arquivo_csv:
+                linhas.append(linha)
+
+        print(linhas)
+        for linha in linhas:
+            if nome_alteracao == linha['NOME']: # Procurando o quem o usuario deseja alterar 
+                print('Digite o índice do campo que deseja alterar.')
+                print('0 - NOME')
+                print('1 - TELEFONE')
+                print('2 - ENDEREÇO')
+                campo_alteracao = int(input('>>> '))
+                print('Digite o novo valor')
+                novo_valor = input('>>> ')
+                linha[campo_alteracao] = novo_valor
+
+        with open(nome_arquivo, 'w', encoding='utf-8', newline='') as arquivo:
+            cabecalho = ["NOME", "TELEFONE", 'ENDEREÇO']
+            arquivo_csv = csv.DictWriter(arquivo, fieldnames=cabecalho, delimiter=';', lineterminator="\n")
+            arquivo_csv.writeheader()
+            arquivo_csv.writerows(linhas)
 
     # @staticmethod
-    def editar(self):
-        pass
+    # def ler_arquivo():
+    #     pass
+
+    # @staticmethod
+    # def escrever_arquivo():
+    #     pass
+
+    # @staticmethod
+    # def adicionar_arquivo():
+    #     pass
+
 
     # @staticmethod
     def excluir(self):
