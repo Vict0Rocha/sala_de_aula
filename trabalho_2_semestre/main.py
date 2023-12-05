@@ -22,6 +22,7 @@ while True:
         escolha_int = int(escolha)
         match escolha_int: # Verificando a escolha do usuario.
             case 1:
+                os.system('cls')
                 print('Você escolheu CADASTAR\n')
                 nome =  input('Digite o NOME: ').upper()
                 telefone =  input('Digite o TELEFONE: ')
@@ -38,15 +39,18 @@ while True:
                 lista_telefonica.cadastrar()
 
             case 2:
+                os.system('cls')
                 print('Você escolheu LISTAR')
                 Lista_Telefonica.listar('trabalho_2_semestre\contatos.csv')
 
             case 3:
+                os.system('cls')
                 print('Você escolheu CONSULTAR')
                 nome_consulta = input('Digite o nome para consultar: ').upper()
                 Lista_Telefonica.consultar('trabalho_2_semestre\contatos.csv', nome_consulta)
 
             case 4:
+                os.system('cls')
                 print('Você escolheu EDITAR')
                 print('Digite o nome que você deseja realizar alguma alteração')
                 nome_alteracao = input('>>> ').upper()

@@ -1,4 +1,5 @@
 import csv
+import os
 
 class Lista_Telefonica:
     def __init__(self, nome_arquivo, nome, telefone, endereco):
@@ -18,6 +19,9 @@ class Lista_Telefonica:
 
             # Escrevendo a nova linha do meu arquivo
             arquivo_csv.writerow({'NOME':self.nome, 'TELEFONE':self.telefone, 'ENDEREÇO':self.endereco})
+
+        os.system('cls')
+        print('Cadastro concluido!')
 
     @staticmethod
     def listar(nome_arquivo):
@@ -67,8 +71,10 @@ class Lista_Telefonica:
                         arquivo_csv.writeheader()
                         arquivo_csv.writerows(lista_arquivo)
                 
+                    os.system('cls')
                     print('Alteração concluida!') 
                
+               # Caso o número digitado esteja fora do range
                 except IndexError:
                     print('[ERRO] - Indice inesistente, por favor, digite somente, 0, 1 ou 2')
 
