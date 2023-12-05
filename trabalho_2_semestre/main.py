@@ -1,6 +1,6 @@
 from lista_de_telefones import Lista_Telefonica
+import os
 # import sys
-# import os
 
 print(18 * '-')
 print(' LISTA TELEFONICA')

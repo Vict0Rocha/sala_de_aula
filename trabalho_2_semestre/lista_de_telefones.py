@@ -11,7 +11,7 @@ class Lista_Telefonica:
         with open(self.nome_arquivo, 'a', encoding='utf-8') as arquivo:
             cabecalho = (["NOME", "TELEFONE", 'ENDEREÇO'])
             arquivo_csv = csv.DictWriter(arquivo, fieldnames=cabecalho, delimiter=';', lineterminator="\n")
-            
+
             # Verificando se o arquivo está vazio, e escrevendo o cabeçalho
             if arquivo.tell() == 0:
                 arquivo_csv.writeheader()
@@ -25,7 +25,7 @@ class Lista_Telefonica:
             arquivo_csv = csv.DictReader(arquivo, delimiter=';')
             for linha in arquivo_csv:
                 print(linha)
-            return [linha for linha in arquivo_csv]
+            # return [linha for linha in arquivo_csv]
 
     @staticmethod
     def consultar(nome_arquivo, nome_consulta):
@@ -37,30 +37,42 @@ class Lista_Telefonica:
 
     @staticmethod
     def editar(nome_arquivo, nome_alteracao):
-        linhas = []
-
         with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
             arquivo_csv = csv.DictReader(arquivo, delimiter=';')
-            for linha in arquivo_csv:
-                linhas.append(linha)
+            lista_arquivo = list(arquivo_csv) # Transformando meu dict em lista
 
-        print(linhas)
-        for linha in linhas:
-            if nome_alteracao == linha['NOME']: # Procurando o quem o usuario deseja alterar 
-                print('Digite o índice do campo que deseja alterar.')
+        for linha in lista_arquivo:
+            if nome_alteracao == linha['NOME']: # Procurando quem o usuario deseja alterar
+                print('Digite o índice que deseja alterar.')
                 print('0 - NOME')
                 print('1 - TELEFONE')
                 print('2 - ENDEREÇO')
-                campo_alteracao = int(input('>>> '))
-                print('Digite o novo valor')
-                novo_valor = input('>>> ')
-                linha[campo_alteracao] = novo_valor
+                indice_alteracao = input('>>> ')
 
-        with open(nome_arquivo, 'w', encoding='utf-8', newline='') as arquivo:
-            cabecalho = ["NOME", "TELEFONE", 'ENDEREÇO']
-            arquivo_csv = csv.DictWriter(arquivo, fieldnames=cabecalho, delimiter=';', lineterminator="\n")
-            arquivo_csv.writeheader()
-            arquivo_csv.writerows(linhas)
+                try:
+                    indice_alteracao_int = int(indice_alteracao)
+
+                    # Para obter em forma de lista, as chaves do meu ditc de forma iteravel 
+                    chave_alteracao = list(linha.keys())[indice_alteracao_int]
+
+                    print(f'Digite sua alteração para {chave_alteracao}')
+                    alteracao = input('>>> ').upper()
+
+                    # Alterando o valor pelo indice digitado
+                    linha[chave_alteracao] = alteracao
+
+                    with open(nome_arquivo, 'w', encoding='utf-8', newline='') as arquivo:
+                        cabecalho = ["NOME", "TELEFONE", 'ENDEREÇO']
+                        arquivo_csv = csv.DictWriter(arquivo, fieldnames=cabecalho, delimiter=';', lineterminator="\n")
+                        arquivo_csv.writeheader()
+                        arquivo_csv.writerows(lista_arquivo)
+                
+                    print('Alteração concluida!') 
+               
+                except IndexError:
+                    print('[ERRO] - Indice inesistente, por favor, digite somente, 0, 1 ou 2')
+
+                
 
     # @staticmethod
     # def ler_arquivo():
