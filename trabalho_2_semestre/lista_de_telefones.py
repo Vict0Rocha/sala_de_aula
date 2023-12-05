@@ -78,21 +78,25 @@ class Lista_Telefonica:
                 except IndexError:
                     print('[ERRO] - Indice inesistente, por favor, digite somente, 0, 1 ou 2')
 
-                
 
-    # @staticmethod
-    # def ler_arquivo():
-    #     pass
+    @staticmethod
+    def excluir(nome_arquivo, nome_excluir):
+        with open(nome_arquivo, 'r+', encoding='utf-8') as arquivo:
+            arquivo_csv = csv.DictReader(arquivo, delimiter=';')
+            lista_arquivo = list(arquivo_csv) # Transformando meu dict em lista
+            
+            arquivo.seek(0)
 
-    # @staticmethod
-    # def escrever_arquivo():
-    #     pass
+            # with open(nome_arquivo, 'w', encoding='utf-8', newline='') as arquivo:
+            cabecalho = ["NOME", "TELEFONE", 'ENDEREÇO']
+            arquivo_csv = csv.DictWriter(arquivo, fieldnames=cabecalho, delimiter=';', lineterminator="\n")
+            arquivo_csv.writeheader()
+            #     arquivo_csv.writerows(lista_arquivo)
 
-    # @staticmethod
-    # def adicionar_arquivo():
-    #     pass
+            for linha in lista_arquivo:
+                if nome_excluir != linha['NOME']:
+                    arquivo_csv.writerow(linha)
 
+            arquivo.truncate()
 
-    # @staticmethod
-    def excluir(self):
-        pass
+        

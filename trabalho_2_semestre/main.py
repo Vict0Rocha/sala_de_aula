@@ -1,6 +1,5 @@
 from lista_de_telefones import Lista_Telefonica
 import os
-# import sys
 
 print(18 * '-')
 print(' LISTA TELEFONICA')
@@ -57,15 +56,19 @@ while True:
                 Lista_Telefonica.editar('trabalho_2_semestre\contatos.csv', nome_alteracao)
 
             case 5:
+                os.system('cls')
                 print('Você escolheu EXCLUIR')
-                continue
+                print('Digite o nome que deseja excluir')
+                nome_excluir = input('>>> ').upper()
+                Lista_Telefonica.excluir('trabalho_2_semestre\contatos.csv', nome_excluir)
+                
 
             case 6:
-                # sys.exit(0) #Finalizando o programa.
-                break
+                break # Finalizando o programa
 
             case Exception:
                 print('[ERRO] - O valor digitado, não coresponde a NENHUMA OPÇÃO.')
+                continue
 
     except ValueError:
         print('[ERRO] - Por favor, digite somente números INTEIROS.')
