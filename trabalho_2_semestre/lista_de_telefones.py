@@ -21,12 +21,13 @@ class Lista_Telefonica:
             arquivo_csv.writerow({'NOME':self.nome, 'TELEFONE':self.telefone, 'ENDEREÇO':self.endereco})
 
         os.system('cls')
-        print('Cadastro concluido!')
+        print('\nCADASTRO CONCLUIDO COM SUCESSO!')
 
     @staticmethod
     def listar(nome_arquivo):
         with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
             arquivo_csv = csv.DictReader(arquivo, delimiter=';')
+            print('Contatos salvos. ')
             for linha in arquivo_csv:
                 print(linha)
             # return [linha for linha in arquivo_csv]
@@ -37,8 +38,9 @@ class Lista_Telefonica:
             arquivo_csv = csv.DictReader(arquivo, delimiter=';')
             for linha in arquivo_csv:
                 if nome_consulta == linha['NOME']:
+                    print('As iformações do contato são.')
                     print(linha)
-
+                
     @staticmethod
     def editar(nome_arquivo, nome_alteracao):
         with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
@@ -72,7 +74,7 @@ class Lista_Telefonica:
                         arquivo_csv.writerows(lista_arquivo)
                 
                     os.system('cls')
-                    print('Alteração concluida!') 
+                    print('\nALTERAÇÃO CONCLUIDA COM SUCESSO!') 
                
                # Caso o número digitado esteja fora do range
                 except IndexError:
@@ -85,6 +87,7 @@ class Lista_Telefonica:
             arquivo_csv = csv.DictReader(arquivo, delimiter=';')
             lista_arquivo = list(arquivo_csv) # Transformando meu dict em lista
             
+            # Colocando o curso para o inico do arquivo
             arquivo.seek(0)
 
             # with open(nome_arquivo, 'w', encoding='utf-8', newline='') as arquivo:
@@ -97,6 +100,13 @@ class Lista_Telefonica:
                 if nome_excluir != linha['NOME']:
                     arquivo_csv.writerow(linha)
 
+            # Para garantir que o conteúdo antigo seja removido se o novo for menor
             arquivo.truncate()
 
+        print('\nCONTATO EXCLUIDO COM SUCESSO!')
         
+        # Metodo para excluir a linha - Percorre todo o meu texto,
+        # verificando se na coluna (NOME), o nome que desejar exluir
+        # é diferente a linha atual, caso seja, a linha sera escrita,
+        # se não for, vai pular a linha e não vai escrever novamente no arquvio.
+    

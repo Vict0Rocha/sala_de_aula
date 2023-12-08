@@ -4,10 +4,10 @@ import os
 print(18 * '-')
 print(' LISTA TELEFONICA')
 print(18 * '-')
-print('')
+# print('')
 
 while True:
-    print('Digite o número corespondente do que você deseja?')
+    print('\nDigite o número corespondente do que você deseja?')
     print('\n1 - CADASTRAR')
     print('2 - LISTAR')
     print('3 - CONSULTAR')
@@ -73,6 +73,6 @@ while True:
     except ValueError:
         print('[ERRO] - Por favor, digite somente números INTEIROS.')
         continue
-    # except Exception:
-    #     print('[ERRO] - Porblema não identificado pelo sistema.')
+    except Exception:
+        print('[ERRO] - Porblema não identificado pelo sistema.')
 
