@@ -1,10 +1,14 @@
 from lista_de_telefones import Lista_Telefonica
 import os
 
+'''
+Um sistema de lista telefonica, que armazena nome, telefone e
+endereço, tudo usando arquivo CSV em forma de DICT.
+'''
+
 print(18 * '-')
 print(' LISTA TELEFONICA')
 print(18 * '-')
-# print('')
 
 while True:
     print('\nDigite o número corespondente do que você deseja?')
@@ -61,7 +65,6 @@ while True:
                 print('Digite o nome que deseja excluir')
                 nome_excluir = input('>>> ').upper()
                 Lista_Telefonica.excluir('trabalho_2_semestre\contatos.csv', nome_excluir)
-                
 
             case 6:
                 break # Finalizando o programa
@@ -75,4 +78,3 @@ while True:
         continue
     except Exception:
         print('[ERRO] - Porblema não identificado pelo sistema.')
-
