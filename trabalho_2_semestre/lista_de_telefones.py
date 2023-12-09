@@ -17,7 +17,11 @@ class Lista_Telefonica:
             if arquivo.tell() == 0:
                 arquivo_csv.writeheader()
 
-            # Escrevendo a nova linha do meu arquivo
+            # for linha in arquivo_csv:
+                # if linha == self.nome:
+                #     print('CADASTRO NEGADO - Já existe um contato com esse nome.')
+                # else:
+                    # Escrevendo a nova linha do meu arquivo
             arquivo_csv.writerow({'NOME':self.nome, 'TELEFONE':self.telefone, 'ENDEREÇO':self.endereco})
 
         os.system('cls')
@@ -29,7 +33,7 @@ class Lista_Telefonica:
             arquivo_csv = csv.DictReader(arquivo, delimiter=';')
             print('Contatos salvos. ')
             for linha in arquivo_csv:
-                print(linha)
+                print('NOME:', linha['NOME'], '- TELEFONE:', linha['TELEFONE'], '- ENDEREÇO:', linha['ENDEREÇO'])
             # return [linha for linha in arquivo_csv]
 
     @staticmethod
@@ -39,7 +43,7 @@ class Lista_Telefonica:
             for linha in arquivo_csv:
                 if nome_consulta == linha['NOME']:
                     print('As iformações do contato são.')
-                    print(linha)
+                    print('NOME:', linha['NOME'], '- TELEFONE:', linha['TELEFONE'], '- ENDEREÇO:', linha['ENDEREÇO'])
                 
     @staticmethod
     def editar(nome_arquivo, nome_alteracao):
