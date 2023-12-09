@@ -74,5 +74,4 @@ while True:
         print('[ERRO] - Por favor, digite somente números INTEIROS.')
         continue
     except Exception:
-        print('[ERRO] - Porblema não identificado pelo sistema.')
-
+        print('ERRO] - Porblema não identificado pelo sistema.')
