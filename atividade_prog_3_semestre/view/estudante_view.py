@@ -1,0 +1,3 @@
+class EstudantesView:
+    def exibir_detalhes_estudantes(lista_estudantes):
+        ...
