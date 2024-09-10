@@ -4,6 +4,7 @@ Para gerenciar as atividades, conteúdos e projetos em sala de aula durante meu 
 * Simulador de correio - Para treinar a manipulação de lista, pilha e fila.
 * Lista telefonica - Usando arquivo simples.
 * Lista telefonica - Usando arquivo CSV com abordagem de dicionarios.
-### Projetos feitos em 2024 com python - 3° semestre 
+### Projetos feitos em 2024 com python - 3° semestre <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" /> 
+* Gerenciador de tarefas com DB - Utilizado o SQLAlchemy para almazenar as dados.
 * Gerenciador de cursos - sem armezanar os dados, com foco nos pilares de POO.
-* ...
+* 3 Exercicíos para treinar POO e MVC.
