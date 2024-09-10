@@ -1,9 +1,12 @@
+
+# Para instalar o pacote do SQLAlchemy -  pip install SQLAlchemy
 import os.path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from controller.tarefas_controller import TarefaController
 from model.tarefas_model import Base
 from view.tarefas_view import TarefaView
+
 
 def main():
     db_path = 'tarefas.db'
@@ -14,7 +17,7 @@ def main():
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    
+
     view = TarefaView()
     controller = TarefaController(session, view)
 
@@ -40,6 +43,7 @@ def main():
             break
         else:
             print("Opção inválida, tente novamente")
+
 
 if __name__ == "__main__":
     main()
