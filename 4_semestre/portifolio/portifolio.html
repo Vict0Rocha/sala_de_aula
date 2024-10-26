@@ -39,7 +39,7 @@
         }
 
         .foto_principal {
-            width: 190px;
+            width: 200px;
             border-radius: 5%;
             float: left;
             margin-right: 15px;
@@ -74,8 +74,6 @@
 
         .quicksand {
             font-family: "Quicksand", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: weight;
             font-style: normal;
         }
 
@@ -89,16 +87,15 @@
         }
 
         .projetos {
-            display: block;
-            /* Mudar o display para block */
             text-align: center;
-            /* Centraliza o h2 */
         }
 
-        .projetos-conteudo {
+        .projetos_conteudo {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 10px;
+            /* Espaçamento entre as divs de projeto */
             margin-top: 20px;
             /* Espaço entre o título e os projetos */
         }
@@ -110,7 +107,6 @@
             padding: 15px;
             box-sizing: border-box;
             background-color: #1e2a3a86;
-            float: left;
             margin: 20px;
             border-radius: 3%;
         }
@@ -123,11 +119,12 @@
         .h2_projetos {
             font-size: 30px;
             font-family: Roboto;
+            text-align: center;
+            padding-top: 120px;
         }
 
         a {
             text-decoration: none;
-            align-self: right;
         }
     </style>
 </head>
@@ -148,36 +145,46 @@
             </p>
             <p>Tenho interesse na area de desenvolvimento web e algoritmos.</p>
         </header>
+
+        <h2 class="h2_projetos">Projetos</h2>
         <section class="projetos">
-            <h2 class="h2_projetos">Projetos</h2>
-            <div class="div_projeto_1">
-
-                <p>Calculadora desenvolvida em Python utilizando PySide6.
-                    <a href="https://github.com/Vict0Rocha/calculator/tree/main" target="_blank"><span
-                            class="highlight">Saiba mais.</span>
+            <div class="projetos_conteudo">
+                <div class="div_projeto_1">
+                    <p>Calculadora desenvolvida em Python utilizando PySide6.
+                        <a href="https://github.com/Vict0Rocha/calculator/tree/main" target="_blank"><span
+                                class="highlight">Saiba mais.</span>
+                        </a>
+                    </p>
+                    <a href="https://github.com/Vict0Rocha/calculator/tree/main" target="_blank">
+                        <img class="img_calculadora" src="img/calculadora.png" alt="imagem_do_projeto">
                     </a>
-                </p>
-
-                <a href="https://github.com/Vict0Rocha/calculator/tree/main" target="_blank">
-                    <img class="img_calculadora" src="img/calculadora.png" alt="imagem_do_projeto">
-                </a>
+                </div>
+                <div class="div_projeto_2">
+                    <!-- Conteúdo do projeto 2 -->
+                </div>
+                <div class="div_projeto_2">
+                    <!-- Conteúdo do projeto 2 -->
+                </div>
 
             </div>
-            <div class="div_projeto_2">
-
-                <p>Calculadora desenvolvida em Python utilizando PySide6.
-                    <a href="https://github.com/Vict0Rocha/calculator/tree/main" target="_blank"><span
-                            class="highlight">Saiba mais.</span>
-                    </a>
-                </p>
-
-                <a href="https://github.com/Vict0Rocha/calculator/tree/main" target="_blank">
-                    <img class="img_calculadora" src="img/calculadora.png" alt="imagem_do_projeto">
-                </a>
-
-            </div>
-
         </section>
+
+        <section>
+            <h2>Habilidades</h2>
+            <!-- <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+            </ul> -->
+        </section>
+
+
+        <footer>
+            <h2>Entre em contato comigo</h2>
+
+        </footer>
     </div>
     <div class="col1"></div>
 
