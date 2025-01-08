@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body style="display: flex">
+    <div style="flex: 1;"></div>
+    <section style="flex: 3;">
+        <header>Termo</header>
+        <table>
+            <tr>
+                <form id="linha1">
+                    <td>
+                        <input maxlength="1" type="text" required />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required />
+                    </td>
+                    <button type="submit" onclick="mudaLinha(6)"></button>
+                </form>
+            </tr>
+            <tr>
+                <form id="linha2">
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <button type="submit" onclick="mudaLinha(6)"></button>
+                </form>
+            </tr>
+            <tr>
+                <form id="linha3">
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                        <button type="submit" onclick="mudaLinha(6)"></button>
+                    </td>
+                </form>
+            </tr>
+            <tr>
+                <form id="linha4">
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                        <button type="submit" onclick="mudaLinha(6)"></button>
+                    </td>
+                </form>
+            </tr>
+            <tr>
+                <form id="linha5">
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <button type="submit" onclick="mudaLinha(6)"></button>
+                </form>
+            </tr>
+            <tr>
+                <form id="linha6">
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <td>
+                        <input maxlength="1" type="text" required disabled />
+                    </td>
+                    <button type="submit" onclick="mudaLinha(6)"></button>
+                </form>
+            </tr>
+
+        </table>
+    </section>
+    <div style="flex: 1;"> </div>
+    <script>
+        const palavra = "CORDA";
+
+        function mudaLinha(contador) {
+            var form = document.getElementById("linha" + contador);
+            form.addEventListener("submit", function (event) { event.preventDefault() })
+
+            let conteudoConcatenado = "";
+
+            Array.from(form.elements).forEach(elemento => {
+                conteudoConcatenado += elemento.value;
+            })
+            conteudoConcatenado.toUpperCase()
+
+            if (palavra.toString() == conteudoConcatenado.toString()) {
+                alert("Você acertou!")
+                window.location.reload()
+            }
+
+            Array.from(form.elements).forEach(elemento => {
+                elemento.setAttribute("disabled", true);
+            })
+
+            contador++;
+            form = document.getElementById("linha" + contador);
+            Array.from(form.elements).forEach(elemento => {
+                elemento.removeAttribute("disabled");
+            })
+        }
+
+        // const form = document.getElementById("linha1");
+
+        // form.addEventListener("submit", function (event) {
+        //     event.prevetDefault(); // Evita o camportamento padrão do formulário
+        // });
+    </script>
+</body>
+
+</html>
